@@ -1,4 +1,11 @@
-#pragma once
+#ifndef DRV_METER_H
+#define DRV_METER_H
+
+#include <stdint.h>
+
+typedef uint8_t bool_t;
+#define FALSE 0
+#define TRUE 1
 
 typedef enum EM_MeterType_e
 {
@@ -33,18 +40,13 @@ typedef struct EM_MetersConfiguration_s
 	uint32_t		EM_ErrorCounter;
 }EM_MetersTable_t;
 
-typedef enum EM_MeterType_e
-{
-	EM_DPM_TYPE = 0,
-	EM_MID_TYPE,
-	EM_METER_TYPE_NUM
-}EM_MeterType_t;
-
-bool_t DPM_MeterErr = FALSE;
-bool_t DPM_Meter_newData_rcvd = FALSE;
+extern bool_t DPM_MeterErr;
+extern bool_t MID_MeterErr;
 
 static EM_MetersTable_t EM_MetersTable[EM_METER_TYPE_NUM];
 static EM_MeterType_t EM_CurrentMeterMgm;
 
 
 extern void EM_UpdateMetersError(bool_t value);
+
+#endif

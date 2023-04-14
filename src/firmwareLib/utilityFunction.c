@@ -1,4 +1,9 @@
-static void EM_UpdateMetersError(bool_t value)
+#include "utilityFunction.h"
+
+bool_t DPM_MeterErr = FALSE;
+bool_t MID_MeterErr = FALSE;
+
+void EM_UpdateMetersError(bool_t value)
 {
 	switch(EM_MetersTable[EM_CurrentMeterMgm].EM_MeterType)
 	{
