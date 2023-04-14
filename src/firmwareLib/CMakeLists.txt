@@ -13,7 +13,7 @@ set(LIBRARY_TARGET_NAME utilityfunction)
 set(UtilityFunctionsrc    utilityFunction.c
                         )
 
-set(UtilityFunctionhdr   
+set(UtilityFunctionhdr utilityFunction.h  
                        )
 
 add_library(${LIBRARY_TARGET_NAME} STATIC ${UtilityFunctionsrc} ${UtilityFunctionhdr})
