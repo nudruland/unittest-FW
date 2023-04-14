@@ -15,14 +15,23 @@
 #include "gtest/gtest.h"
 // Simple UT
 
-TEST(xx, yy)
+void setup(void)
 {
+	DPM_MeterErr = FALSE;
+	MID_MeterErr = FALSE;
+}
+
+TEST(ExternalMeter, Set_DPM_MeterError_TRUE)
+{
+	//Setup
+	setup();
+	EM_CurrentMeterMgm = EM_DPM_TYPE;
+	EM_MetersTable[EM_CurrentMeterMgm].EM_MeterType = EM_DPM_TYPE;
+	
+	//Execute
 	EM_UpdateMetersError(TRUE);
 
-
-
-	// EXPECT_EQ(expected,actual);<<<----expected,actual
-	//EXPECT_EQ(2, mult((double)1,(double) 2));
-	//ASSERT_EQ(2, mult((double)1, (double)2));
-	// ASSERT_FALSE(mult.invoke(1, 2) == 2);
+	//Check
+	EXPECT_EQ(FALSE,DPM_MeterErr);
+	EXPECT_EQ(FALSE,MID_MeterErr);
 }

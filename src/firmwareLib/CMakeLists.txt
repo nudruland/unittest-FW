@@ -10,7 +10,7 @@ include(CMakePackageConfigHelpers)
 
 set(LIBRARY_TARGET_NAME utilityfunction)
 
-set(UtilityFunctionsrc    utilityFunction.c
+set(UtilityFunctionsrc    utilityFunction.cpp
                         )
 
 set(UtilityFunctionhdr utilityFunction.h  
