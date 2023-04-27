@@ -10,10 +10,10 @@ include(CMakePackageConfigHelpers)
 
 set(LIBRARY_TARGET_NAME utilityfunction)
 
-set(UtilityFunctionsrc    utilityFunction.cpp
+set(UtilityFunctionsrc    utilityFunction_io.cpp
                         )
 
-set(UtilityFunctionhdr utilityFunction.h  
+set(UtilityFunctionhdr utilityFunction_io.h  
                        )
 
 add_library(${LIBRARY_TARGET_NAME} STATIC ${UtilityFunctionsrc} ${UtilityFunctionhdr})
